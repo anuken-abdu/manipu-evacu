@@ -268,14 +268,73 @@
         </div>
     </section>
 
-    <footer class="main-footer">
+        <footer class="main-footer">
+        <style>
+            .footer-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 40px;
+                text-align: left;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+            .address-item {
+                border-left: 3px solid var(--orange); /* Оранжевая линия слева */
+                padding-left: 20px;
+            }
+            .address-item p {
+                color: #ccc;
+                margin-bottom: 10px;
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+            .address-item a {
+                color: white;
+                font-weight: 700;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block; /* Номер с новой строки */
+                transition: 0.3s;
+            }
+            .address-item a:hover {
+                color: var(--orange);
+            }
+            .address-item i {
+                color: var(--orange);
+                margin-right: 8px;
+            }
+        </style>
+
         <div class="container">
-            <h3 style="color: white; margin-bottom: 20px; font-family: 'Playfair Display', serif;">ASTANA STAMP</h3>
-            <div style="margin-top: 30px; font-size: 0.9rem;">
+            <h3 style="color: white; margin-bottom: 10px; font-family: 'Playfair Display', serif;">ASTANA STAMP</h3>
+            <p style="color: #777;">Сеть центров печати</p>
+
+            <div class="footer-grid">
+                <div class="address-item">
+                    <p><i class="fas fa-map-marker-alt"></i> БЦ "7 Континент"</p>
+                    <p style="font-size: 0.9rem;">ул. Кенесары 40, оф. 922</p>
+                    <a href="tel:+77752222816">+7 775 222 28 16</a>
+                </div>
+
+                <div class="address-item">
+                    <p><i class="fas fa-map-marker-alt"></i> Есильский район</p>
+                    <p style="font-size: 0.9rem;">пр. Улы Дала 67</p>
+                    <a href="tel:+77775297177">+7 777 529 71 77</a>
+                </div>
+
+                <div class="address-item">
+                    <p><i class="fas fa-map-marker-alt"></i> Алматинский район</p>
+                    <p style="font-size: 0.9rem;">ул. Сагадат Нурмагамбетова 19</p>
+                    <a href="tel:+77715297177">+7 771 529 71 77</a>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; font-size: 0.9rem; color: #555;">
                 Разработка сайта: <a href="https://t.me/Anukenn" class="dev-link">@Anukenn</a>
             </div>
         </div>
     </footer>
+
 
     <div class="sticky-footer">
         <a href="tel:+77017172777" class="sticky-btn btn-call">
