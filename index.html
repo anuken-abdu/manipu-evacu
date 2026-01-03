@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASTANA STAMP | Печати и Штампы</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #1a365d;   /* Темно-синий деловой */
+            --accent-red: #e53e3e;     /* Красный как подушечка штампа */
+            --bg-light: #f7fafc;       /* Светлый фон */
+            --text-dark: #2d3748;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- UI ЭЛЕМЕНТЫ --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 12px 30px; border-radius: 8px; font-weight: 700;
+            text-decoration: none; transition: 0.3s; cursor: pointer; border: none;
+            text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue); color: var(--white);
+            box-shadow: 0 5px 15px rgba(26, 54, 93, 0.3);
+        }
+        .btn-primary:hover { transform: translateY(-3px); background: #2a4365; }
+
+        .btn-accent {
+            background: var(--accent-red); color: var(--white);
+            box-shadow: 0 5px 15px rgba(229, 62, 62, 0.4);
+        }
+        .btn-accent:hover { transform: translateY(-3px); background: #c53030; }
+
+        /* --- HEADER --- */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed; width: 100%; top: 0; z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex; justify-content: space-between; align-items: center; height: 80px;
+        }
+
+        .logo {
+            font-size: 1.5rem; font-weight: 900; color: var(--primary-blue);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .logo i { color: var(--accent-red); }
+
+        .header-contacts {
+            display: flex; gap: 20px; align-items: center;
+        }
+        .phone-item {
+            display: flex; flex-direction: column; align-items: flex-end;
+            font-weight: 700; font-size: 0.9rem;
+        }
+        .phone-item a { color: var(--text-dark); text-decoration: none; transition: 0.3s; }
+        .phone-item a:hover { color: var(--accent-red); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            margin-top: 80px;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+            position: relative; overflow: hidden;
+        }
+
+        .hero::before {
+            content: ''; position: absolute; top: -50%; right: -20%;
+            width: 800px; height: 800px; background: rgba(26, 54, 93, 0.05);
+            border-radius: 50%; animation: pulse 10s infinite alternate;
+        }
+
+        .hero-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; position: relative; z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; color: var(--primary-blue);
+        }
+        .hero-text p {
+            font-size: 1.2rem; color: #4a5568; margin-bottom: 30px; border-left: 4px solid var(--accent-red); padding-left: 20px;
+        }
+
+        .hero-image-placeholder {
+            width: 100%; height: 400px;
+            background: var(--white);
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        .hero-image-placeholder img {
+            max-width: 100%; max-height: 100%; object-fit: contain;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+        
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- MOBILE ADAPTIVE --- */
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-text p { border: none; padding: 0; }
+            .header-contacts { display: none; } /* Скрываем в шапке, будет в плавающей кнопке */
+            .logo { font-size: 1.2rem; }
+            .hero-image-placeholder { height: 250px; margin-top: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <i class="fas fa-stamp"></i> ASTANA STAMP
+            </div>
+            <div class="header-contacts">
+                <div class="phone-item">
+                    <a href="tel:+77017172777">+7 701 717 27 77</a>
+                    <a href="tel:+77775297177">8 777 529 71 77</a>
+                </div>
+                <a href="https://wa.me/77017172777" class="btn btn-accent">
+                    <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text fade-in">
+                    <h1>Печати и Штампы <br>в Астане</h1>
+                    <p>Изготовление за 30 минут. Австрийское качество Trodat. <br>Автоматические, карманные и ручные оснастки.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; md:justify-content: flex-start;">
+                        <a href="#catalog" class="btn btn-primary">Смотреть каталог</a>
+                        <a href="tel:+77017172777" class="btn btn-accent">Позвонить</a>
+                    </div>
+                </div>
+                
+                <div class="hero-image-placeholder fade-in">
+                    <i class="fas fa-file-signature" style="font-size: 8rem; color: #cbd5e0;"></i>
+                    </div>
+            </div>
+        </div>
+    </section>
+        <style>
+        .section-title {
+            text-align: center; font-size: 2.5rem; color: var(--primary-blue);
+            margin: 60px 0 40px; position: relative; font-weight: 900;
+        }
+        .section-title::after {
+            content: ''; display: block; width: 60px; height: 4px; background: var(--accent-red);
+            margin: 15px auto 0; border-radius: 2px;
+        }
+
+        /* --- CATALOG GRID --- */
+        .catalog-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px; margin-bottom: 80px;
+        }
+
+        .product-card {
+            background: var(--white); border-radius: 15px; overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s;
+            display: flex; flex-direction: column; border: 1px solid #edf2f7;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: var(--primary-blue);
+        }
+
+        .card-img {
+            height: 250px; background: #f8f9fa; display: flex; align-items: center; justify-content: center;
+            border-bottom: 1px solid #eee; padding: 20px;
+        }
+        .card-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .card-img i { font-size: 5rem; color: #ddd; }
+
+        .card-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-title { font-size: 1.2rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 10px; }
+        .card-desc { font-size: 0.9rem; color: #718096; margin-bottom: 15px; flex-grow: 1; }
+        
+        .card-price {
+            font-size: 1.4rem; font-weight: 900; color: var(--text-dark); margin-bottom: 15px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .card-price span { color: var(--accent-red); }
+
+        /* --- FLOATING MOBILE BUTTONS --- */
+        .mobile-buttons {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            display: flex; z-index: 999;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        }
+        .mob-btn {
+            flex: 1; padding: 15px; text-align: center; color: white;
+            font-weight: 700; text-decoration: none; font-size: 1rem;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .mob-call { background: var(--primary-blue); }
+        .mob-wa { background: #25D366; }
+
+        @media(min-width: 769px) { .mobile-buttons { display: none; } }
+
+        /* --- FOOTER --- */
+        footer { background: var(--primary-blue); color: white; padding: 50px 0 80px; text-align: center; }
+        .dev-credit { margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.7; }
+        .dev-credit a { color: #fff; text-decoration: none; font-weight: bold; }
+    </style>
+
+    <div class="container" id="catalog">
+        <h2 class="section-title">Каталог Продукции</h2>
+        
+        <div class="catalog-grid">
+            <div class="product-card fade-in">
+                <div class="card-img">
+                    <img src="images/trodat4642.jpg" alt="Trodat 4642" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <i class="fas fa-circle-notch" style="display:none;"></i>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">Trodat 4642</h3>
+                    <p class="card-desc">Автоматическая оснастка (Австрия). <br>Диаметр 40 мм.</p>
+                    <div class="card-price">10 000 ₸</div>
+                    <a href="https://wa.me/77017172777?text=Здравствуйте, хочу заказать Trodat 4642" class="btn btn-primary" style="width: 100%">Заказать</a>
+                </div>
+            </div>
+
+            <div class="product-card fade-in">
+                <div class="card-img">
+                    <img src="images/trodat46042.jpg" alt="IDEAL Trodat" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <i class="fas fa-stamp" style="display:none;"></i>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">IDEAL Trodat 46042</h3>
+                    <p class="card-desc">Автоматическая оснастка (Австрия). <br>Диаметр 40 мм.</p>
+                    <div class="card-price">8 500 ₸</div>
+                    <a href="https://wa.me/77017172777?text=Здравствуйте, хочу заказать IDEAL Trodat 46042" class="btn btn-primary" style="width: 100%">Заказать</a>
+                </div>
+            </div>
+
+            <div class="product-card fade-in">
+                <div class="card-img">
+                    <img src="images/trodat9342.jpg" alt="Trodat 9342" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <i class="fas fa-box-open" style="display:none;"></i>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">Trodat 9342</h3>
+                    <p class="card-desc">Карманная оснастка (Австрия). <br>Диаметр 40 мм.</p>
+                    <div class="card-price">9 000 ₸</div>
+                    <a href="https://wa.me/77017172777?text=Здравствуйте, хочу заказать Trodat 9342" class="btn btn-primary" style="width: 100%">Заказать</a>
+                </div>
+            </div>
+
+            <div class="product-card fade-in">
+                <div class="card-img">
+                    <img src="images/trodat9330.jpg" alt="Trodat 9330" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <i class="fas fa-user-md" style="display:none;"></i>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">Trodat 9330</h3>
+                    <p class="card-desc">Врачебная, карманная (Австрия). <br>Диаметр 30 мм.</p>
+                    <div class="card-price">8 000 ₸</div>
+                    <a href="https://wa.me/77017172777?text=Здравствуйте, хочу заказать Врачебную Trodat 9330" class="btn btn-primary" style="width: 100%">Заказать</a>
+                </div>
+            </div>
+
+            <div class="product-card fade-in">
+                <div class="card-img">
+                    <img src="images/manual.jpg" alt="Ручная печать" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <i class="fas fa-fingerprint" style="display:none;"></i>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">Печать с кнопкой</h3>
+                    <p class="card-desc">Ручная оснастка (Китай). <br>Диаметр 40 мм.</p>
+                    <div class="card-price">6 500 ₸</div>
+                    <a href="https://wa.me/77017172777?text=Здравствуйте, хочу заказать Ручную печать" class="btn btn-primary" style="width: 100%">Заказать</a>
+                </div>
+            </div>
+
+            <div class="product-card fade-in">
+                <div class="card-img">
+                    <img src="images/dater.jpg" alt="Датер" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <i class="fas fa-calendar-alt" style="display:none;"></i>
+                </div>
+                <div class="card-info">
+                    <h3 class="card-title">Датер Trodat 4810</h3>
+                    <p class="card-desc">Автоматический, числовой. <br>До 2032 года.</p>
+                    <div class="card-price">4 000 ₸</div>
+                    <a href="https://wa.me/77017172777?text=Здравствуйте, хочу заказать Датер" class="btn btn-primary" style="width: 100%">Заказать</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h3 style="margin-bottom: 20px;">ASTANA STAMP</h3>
+            <p>Центр печатей и штампов</p>
+            <div style="margin: 20px 0; font-size: 1.2rem;">
+                <p><i class="fas fa-phone"></i> +7 701 717 27 77</p>
+                <p><i class="fas fa-phone"></i> 8 777 529 71 77</p>
+            </div>
+            
+            <div class="dev-credit">
+                Разработка сайта: <a href="https://t.me/Anukenn">@Anukenn</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-buttons">
+        <a href="tel:+77017172777" class="mob-btn mob-call">
+            <i class="fas fa-phone-alt"></i> Позвонить
+        </a>
+        <a href="https://wa.me/77017172777" class="mob-btn mob-wa">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
