@@ -336,14 +336,56 @@
     </footer>
 
 
+        <style>
+        .sticky-footer {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: #0a101d; padding: 10px; 
+            display: flex; gap: 8px; z-index: 1000; /* gap уменьшил, чтобы вместить 3 кнопки */
+            border-top: 1px solid rgba(255,255,255,0.1);
+            animation: slideInUp 0.5s ease-out 1.5s backwards;
+        }
+
+        .sticky-btn {
+            flex: 1; padding: 12px 5px; border-radius: 8px; text-align: center;
+            color: white; font-weight: 700; text-decoration: none;
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+            text-transform: uppercase; font-size: 0.75rem; /* Чуть меньше шрифт, чтобы влезло */
+            line-height: 1;
+        }
+
+        .btn-call { 
+            background: var(--blue-light); 
+        }
+        
+        /* Стиль для Инстаграма (Градиент) */
+        .btn-insta {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            box-shadow: 0 0 15px rgba(214, 36, 159, 0.3);
+        }
+
+        .btn-wa { 
+            background: #25D366; 
+        }
+
+        /* На иконках шрифт чуть крупнее */
+        .sticky-btn i { font-size: 1.1rem; }
+    </style>
+
     <div class="sticky-footer">
         <a href="tel:+77017172777" class="sticky-btn btn-call">
-            <i class="fas fa-phone-alt"></i> Позвонить
+            <i class="fas fa-phone-alt"></i> <span style="display:none;">Звонок</span>
+            Звонок
         </a>
+        
+        <a href="https://instagram.com/Astana_stamp" class="sticky-btn btn-insta">
+            <i class="fab fa-instagram"></i> Инста
+        </a>
+        
         <a href="https://wa.me/77017172777" class="sticky-btn btn-wa">
             <i class="fab fa-whatsapp"></i> WhatsApp
         </a>
     </div>
+
 
     <script>
         const observer = new IntersectionObserver((entries) => {
