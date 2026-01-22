@@ -1,165 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интенсив: Онлайн-Ассистент</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<head><meta name="robots" content="noindex, nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-	<meta charset="utf-8">
-	<title>Best Free Bootstrap Website Template - Colorlib</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-	<meta name="robots" content="noindex, nofollow">
+    <style>
+        :root {
+            --bg-color: #0f0f0f;
+            --text-color: #ffffff;
+            --accent-gold: #d4af37;
+            --accent-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            --secondary-text: #a0a0a0;
+        }
 
-	<link href="/assets/css/app.css" rel="stylesheet" fetchpriority="high">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<script>if (top !== self) top.location.replace(self.location.href);</script>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-MMFL1YR6W5"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'G-MMFL1YR6W5');
-	</script>
+        /* Анимация фона (тонкая текстура) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000000 100%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Хедер с датой */
+        .date-badge {
+            display: inline-block;
+            border: 1px solid var(--accent-gold);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease forwards;
+            opacity: 0;
+        }
+
+        .sub-header {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeIn 1.5s ease forwards;
+            opacity: 0;
+            animation-delay: 0.3s;
+        }
+
+        /* Главный заголовок */
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+            animation-delay: 0.5s;
+        }
+
+        h1 span {
+            display: block;
+            margin-top: 10px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 3rem; /* Чуть крупнее для акцента */
+        }
+
+        /* Описание боли */
+        .pain-point {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 40px;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+            animation-delay: 0.7s;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Блок с преимуществами (3 колонки) */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+            animation-delay: 0.9s;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 150px;
+            border: 1px solid #333;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .feature-item i {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .feature-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Кнопка CTA */
+        .cta-container {
+            margin-top: 20px;
+            animation: zoomIn 1s ease forwards;
+            opacity: 0;
+            animation-delay: 1.1s;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background: var(--accent-gradient);
+            color: #000;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        .btn-gold:hover {
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+            transform: scale(1.02);
+        }
+        
+        /* Блик на кнопке */
+        .btn-gold::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn-gold:hover::after {
+            left: 100%;
+            transition: 0.5s;
+        }
+
+        .bonus-text {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+        }
+
+        .bonus-highlight {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        /* Декоративные элементы */
+        .divider {
+            height: 1px;
+            width: 100px;
+            background: var(--accent-gradient);
+            margin: 40px auto;
+            opacity: 0.5;
+        }
+
+        /* Адаптив под мобильные */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            h1 span {
+                font-size: 2.2rem;
+            }
+            .features {
+                flex-direction: column;
+            }
+            .container {
+                padding: 30px 15px;
+            }
+            .btn-gold {
+                width: 100%;
+                padding: 15px 20px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Keyframes для анимаций */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- Header -->
-<header class="switcher-bar">
-	<!-- Logo -->
-	<div class="logo">
-		<a href="https://colorlib.com/wp/templates/" title="Colorlib Templates">
-			<img src="/assets/img/logo.png" alt="Colorlib logo" fetchpriority="high" decoding="sync">
-		</a>
-	</div>
+    <div class="container">
+        
+        <div class="date-badge">
+            <i class="far fa-calendar-alt"></i> 13-14-15 января в 20:00 по Астане
+        </div>
 
-	<!-- Product Switcher -->
-	<div class="product-switcher">
-		<a href="#" title="Select a Product">
-			Select a Product
-		</a>
-	</div>
+        <p class="sub-header">
+            Эксклюзивный 3-х дневный бесплатный интенсив по выходу на удаленку с нуля
+        </p>
 
-	<!-- Header Buttons -->
-	<div class="header-buttons">
-		<!-- Desktop Button -->
-		<div class="desktop-btn header-btn">
-			<a href="#" title="Desktop View">
-				<svg viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7l-2 3v1h8v-1l-2-3h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 12H3V4h18v10z"/></svg>
-			</a>
-		</div>
+        <h1>
+            Как с нуля войти в профессию
+            <span>ОНЛАЙН-АССИСТЕНТ</span>
+            с доходом от 300 000 тенге в месяц
+        </h1>
 
-		<!-- Tablet Button -->
-		<div class="tablet-btn header-btn">
-			<a href="#" title="Tablet View">
-				<svg viewBox="0 0 24 24"><path d="M18.5 0h-14C3.12 0 2 1.12 2 2.5v19C2 22.88 3.12 24 4.5 24h14c1.38 0 2.5-1.12 2.5-2.5v-19C21 1.12 19.88 0 18.5 0zm-7 23c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7.5-4H4V3h15v16z"/></svg>
-			</a>
-		</div>
+        <div class="divider"></div>
 
-		<!-- Mobile Button -->
-		<div class="mobile-btn header-btn">
-			<a href="#" title="Smartphone View">
-				<svg viewBox="0 0 24 24"><path d="M15.5 1h-8C6.12 1 5 2.12 5 3.5v17C5 21.88 6.12 23 7.5 23h8c1.38 0 2.5-1.12 2.5-2.5v-17C18 2.12 16.88 1 15.5 1zm-4 21c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5-4H7V4h9v14z"/></svg>
-			</a>
-		</div>
+        <p class="pain-point">
+            "Выберись из жизни, где деньги заканчиваются быстрее, чем месяц, а работа забирает все силы, время и мечты"
+        </p>
 
-		<!-- Favorites Button -->
-		<div class="favorites-btn header-btn">
-			<a href="#" title="View Favorites">
-				<svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-				<span class="favorites-badge">0</span>
-			</a>
-		</div>
+        <div class="features">
+            <div class="feature-item">
+                <i class="fas fa-hourglass-half"></i>
+                <span class="feature-text">Всего 3 дня</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="feature-text">Сертификат<br>после интенсива</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-laptop-house"></i>
+                <span class="feature-text">Без опыта<br>в онлайне</span>
+            </div>
+        </div>
 
-		<!-- Purchase Button -->
-		<div class="purchase-btn header-btn">
-			<a href="#" title="Buy now">
-				<svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
-			</a>
-		</div>
+        <div class="cta-container">
+            <a href="#" class="btn-gold">Зарегистрироваться</a>
+            
+            <p class="bonus-text">
+                и получить <span class="bonus-highlight">БОНУС</span> за регистрацию:<br>
+                Топ-4 навыка в онлайне, за которые платят от 300 000 тенге в месяц
+            </p>
+        </div>
 
-		<!-- Close Button -->
-		<div class="remove-btn header-btn">
-			<a href="#" title="Close this bar">
-				<svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-			</a>
-		</div>
-	</div>
-</header>
-
-<!-- Products Modal -->
-<section class="switcher-body">
-	<div class="modal-header">
-		<div>
-			<h2>Select a Template</h2>
-			<span class="template-count"></span>
-		</div>
-		<button class="modal-close" title="Close">
-			<svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-		</button>
-	</div>
-	<nav class="tab-navigation">
-		<button class="tab-btn active" data-tab="all">
-			<span class="tab-label">All Templates</span>
-		</button>
-		<button class="tab-btn" data-tab="popular">
-			<span class="tab-icon">
-				<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-			</span>
-			<span class="tab-label">Popular</span>
-		</button>
-		<button class="tab-btn" data-tab="favorites">
-			<span class="tab-icon">
-				<svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-			</span>
-			<span class="tab-label">Favorites</span>
-			<span class="tab-count favorites-count" data-count="0">0</span>
-		</button>
-	</nav>
-	<div class="filter-bar">
-		<div class="search-box">
-			<input type="text" id="template-search" placeholder="Search templates..." autocomplete="off">
-		</div>
-		<div class="category-filters" id="category-filters">
-			<!-- Categories populated by JS -->
-		</div>
-		<div class="color-filters" id="color-filters">
-			<span class="color-label">Colors:</span>
-			<button class="color-swatch" data-color="all" title="All Colors"><span class="swatch-all"></span></button>
-			<button class="color-swatch" data-color="red" title="Red" style="--swatch-color: #e53935"></button>
-			<button class="color-swatch" data-color="orange" title="Orange" style="--swatch-color: #ff9800"></button>
-			<button class="color-swatch" data-color="yellow" title="Yellow" style="--swatch-color: #fdd835"></button>
-			<button class="color-swatch" data-color="green" title="Green" style="--swatch-color: #43a047"></button>
-			<button class="color-swatch" data-color="teal" title="Teal" style="--swatch-color: #00acc1"></button>
-			<button class="color-swatch" data-color="blue" title="Blue" style="--swatch-color: #1e88e5"></button>
-			<button class="color-swatch" data-color="purple" title="Purple" style="--swatch-color: #8e24aa"></button>
-			<button class="color-swatch" data-color="pink" title="Pink" style="--swatch-color: #ec407a"></button>
-			<button class="color-swatch" data-color="brown" title="Brown" style="--swatch-color: #795548"></button>
-			<button class="color-swatch" data-color="grey" title="Grey" style="--swatch-color: #757575"></button>
-			<button class="color-swatch" data-color="black" title="Dark" style="--swatch-color: #212121"></button>
-			<button class="color-swatch" data-color="white" title="Light" style="--swatch-color: #f5f5f5"></button>
-		</div>
-	</div>
-	<div class="products-wrapper">
-		<div class="products-list"></div>
-	</div>
-</section>
-
-<!-- Preloader -->
-<div class="preloader">
-	<div class="preloader-spinner"></div>
-</div>
-
-<!-- Product iframe -->
-<iframe class="product-iframe" loading="lazy"></iframe>
-
-<!-- JavaScript -->
-<script src="/assets/js/products.js"></script>
-<script src="/assets/js/colors.js"></script>
-<script src="/assets/js/app.js"></script>
+    </div>
 
 </body>
-
 </html>
