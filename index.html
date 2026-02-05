@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Спецтехника Алматы | Манипулятор и Эвакуатор 24/7 | KAZSPEC</title>
-  <meta name="description" content="Услуги манипулятора и эвакуатора в Алматы. Срочная подача спецтехники. Перевозка грузов и эвакуации." />
+  <title>Эвакуатор Караганда и область | 24/7 | KAZSPEC</title>
+  <meta name="description" content="Эвакуатор 24/7 в Караганде и области. Срочная подача от 20 минут. ДТП, заблокированные авто, безопасная погрузка и перевозка." />
   <meta name="theme-color" content="#070A12" />
 
   <!-- Google Ads / GTAG -->
@@ -49,14 +49,11 @@
             text: 'rgba(255,255,255,.92)',
             muted: 'rgba(255,255,255,.70)',
             muted2: 'rgba(255,255,255,.55)',
-            manip: '#00E5FF',
             evac: '#FF5A3C',
             evac2: '#FF8A65',
-            manip2: '#2979FF'
           },
           boxShadow: {
             soft: '0 20px 60px rgba(0,0,0,.45)',
-            glowCyan: '0 18px 55px rgba(0,229,255,.20)',
             glowOrange: '0 18px 55px rgba(255,90,60,.22)',
           },
           borderRadius: {
@@ -72,8 +69,6 @@
 
   <style>
     :root{
-      --manip: #00E5FF;
-      --manip2:#2979FF;
       --evac:#FF5A3C;
       --evac2:#FF8A65;
       --base:#070A12;
@@ -93,15 +88,15 @@
     }
     .bg-orbs::before{
       background:
-        radial-gradient(520px 520px at 20% 20%, rgba(0,229,255,.35), transparent 62%),
-        radial-gradient(520px 520px at 80% 30%, rgba(255,90,60,.28), transparent 65%),
-        radial-gradient(580px 580px at 60% 85%, rgba(41,121,255,.25), transparent 65%);
+        radial-gradient(520px 520px at 20% 25%, rgba(255,90,60,.28), transparent 62%),
+        radial-gradient(580px 580px at 70% 70%, rgba(255,138,101,.22), transparent 65%),
+        radial-gradient(520px 520px at 85% 30%, rgba(255,90,60,.20), transparent 65%);
     }
     .bg-orbs::after{
       opacity:.22;
       background:
-        radial-gradient(420px 420px at 15% 70%, rgba(255,138,101,.22), transparent 60%),
-        radial-gradient(420px 420px at 85% 75%, rgba(0,229,255,.18), transparent 62%);
+        radial-gradient(420px 420px at 15% 75%, rgba(255,138,101,.18), transparent 60%),
+        radial-gradient(420px 420px at 85% 75%, rgba(255,90,60,.16), transparent 62%);
     }
     .noise{
       position:absolute; inset:0; z-index:1; pointer-events:none; opacity:.10;
@@ -128,12 +123,6 @@
     .link-underline:hover{ background-size: 100% 2px; }
 
     /* Gradient text helpers */
-    .grad-manip{
-      background: linear-gradient(90deg, var(--manip), var(--manip2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
     .grad-evac{
       background: linear-gradient(90deg, var(--evac), var(--evac2));
       -webkit-background-clip: text;
@@ -183,7 +172,7 @@
       height: 3px;
       width: 0%;
       z-index: 9999;
-      background: linear-gradient(90deg, var(--manip), var(--evac));
+      background: linear-gradient(90deg, var(--evac), var(--evac2));
       box-shadow: 0 10px 30px rgba(0,0,0,.35);
     }
 
@@ -238,34 +227,30 @@
           <!-- Brand -->
           <a href="#top" class="group flex items-center gap-3">
             <div class="h-10 w-10 rounded-xl2 grid place-items-center border border-stroke bg-white/5">
-              <i data-lucide="truck" class="text-manip"></i>
+              <i data-lucide="truck" class="text-white/85"></i>
             </div>
             <div class="leading-tight">
               <div class="font-display text-lg md:text-xl font-extrabold tracking-wide">
                 KAZ<span class="text-white/70 group-hover:text-white transition">SPEC</span>
               </div>
-              <div class="text-[10px] tracking-[.26em] text-muted2 uppercase -mt-1">спецтехника</div>
+              <div class="text-[10px] tracking-[.26em] text-muted2 uppercase -mt-1">эвакуатор</div>
             </div>
           </a>
 
           <!-- Nav -->
           <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-white/80">
-            <a href="#manip-section" class="link-underline hover:text-white flex items-center gap-2">
-              <span class="inline-flex h-2 w-2 rounded-full bg-manip shadow-[0_0_16px_rgba(0,229,255,.55)]"></span>
-              Манипулятор
-            </a>
             <a href="#evac-section" class="link-underline hover:text-white flex items-center gap-2">
               <span class="inline-flex h-2 w-2 rounded-full bg-evac shadow-[0_0_16px_rgba(255,90,60,.55)]"></span>
-              Эвакуатор
+              Услуги
             </a>
             <a href="#contacts" class="link-underline hover:text-white">Контакты</a>
           </nav>
 
           <!-- Phone -->
-          <a href="tel:+77474640078"
+          <a href="tel:+77780992900"
              onclick="return gtag_report_conversion(this.href);"
              class="rounded-xl2 px-4 py-2 border border-stroke bg-white/5 hover:bg-white/10 transition text-white font-display font-extrabold tracking-wide">
-            +7 747 464 0078
+            +7 (778) 099 29 00
           </a>
         </div>
       </div>
@@ -281,7 +266,7 @@
 
       <!-- hero image -->
       <div class="absolute inset-0 z-0">
-        <img src="images/hero-bg.jpg" alt="Спецтехника Алматы" class="h-full w-full object-cover opacity-[.42]" />
+        <img src="images/hero-bg.jpg" alt="Эвакуатор Караганда" class="h-full w-full object-cover opacity-[.42]" />
         <div class="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-base"></div>
       </div>
 
@@ -289,34 +274,34 @@
         <div class="reveal">
           <div class="inline-flex items-center gap-2 rounded-full border border-stroke bg-white/5 px-4 py-2 text-xs font-semibold text-white/80">
             <span class="h-2 w-2 rounded-full bg-evac"></span>
-            24/7 • Подача по Алматы от 20 минут • Работаем быстро и аккуратно
+            24/7 • Подача по Караганде от 20 минут • Работаем быстро и аккуратно
           </div>
 
           <h1 class="mt-6 font-display text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.02] tracking-tight text-white">
-            Услуги <span class="grad-manip">манипулятора</span><br class="hidden md:block">
-            и <span class="grad-evac">эвакуатора</span> 24/7
+            <span class="grad-evac">Эвакуатор</span> 24/7<br class="hidden md:block">
+            Караганда и область
           </h1>
 
           <p class="mt-5 max-w-2xl text-white/80 text-base md:text-lg leading-relaxed">
-            Перевозка грузов любой сложности и срочная автопомощь.
-            <span class="text-white font-semibold">Подача по Алматы от 20 минут.</span>
+            ДТП • Заблокированные авто • Безопасная погрузка и аккуратная перевозка.
+            <span class="text-white font-semibold">Подача от 20 минут.</span>
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row gap-3">
-            <a href="https://wa.me/77474640078"
-               onclick="return gtag_report_conversion(this.href);"
-               class="btn inline-flex items-center justify-center gap-3 rounded-xl2 px-7 py-4 font-extrabold font-display text-base text-base/95
-                      border border-stroke bg-gradient-to-r from-manip/90 to-manip2/90 hover:brightness-110 transition shadow-glowCyan">
-              <i data-lucide="message-circle"></i>
-              Заказать манипулятор
-            </a>
-
-            <a href="tel:+77474640078"
+            <a href="tel:+77780992900"
                onclick="return gtag_report_conversion(this.href);"
                class="btn inline-flex items-center justify-center gap-3 rounded-xl2 px-7 py-4 font-extrabold font-display text-base
                       border border-stroke bg-gradient-to-r from-evac/95 to-evac2/95 hover:brightness-110 transition shadow-glowOrange">
               <i data-lucide="phone-call"></i>
               Вызвать эвакуатор
+            </a>
+
+            <a href="https://wa.me/77780992900"
+               onclick="return gtag_report_conversion(this.href);"
+               class="btn inline-flex items-center justify-center gap-3 rounded-xl2 px-7 py-4 font-extrabold font-display text-base
+                      border border-stroke bg-white/5 hover:bg-white/10 transition text-white">
+              <i data-lucide="message-circle"></i>
+              Написать в WhatsApp
             </a>
           </div>
 
@@ -336,7 +321,7 @@
             <div class="glass rounded-xl2 p-4 border border-stroke">
               <div class="flex items-center gap-3">
                 <div class="h-10 w-10 rounded-xl2 grid place-items-center bg-white/5 border border-stroke">
-                  <i data-lucide="zap" class="text-manip"></i>
+                  <i data-lucide="zap" class="text-white/85"></i>
                 </div>
                 <div>
                   <div class="font-display font-extrabold text-white">Быстро</div>
@@ -351,228 +336,25 @@
                 </div>
                 <div>
                   <div class="font-display font-extrabold text-white">Безопасно</div>
-                  <div class="text-xs text-muted">Аккуратная фиксация</div>
+                  <div class="text-xs text-muted">Аккуратная погрузка</div>
                 </div>
               </div>
             </div>
             <div class="glass rounded-xl2 p-4 border border-stroke">
               <div class="flex items-center gap-3">
                 <div class="h-10 w-10 rounded-xl2 grid place-items-center bg-white/5 border border-stroke">
-                  <i data-lucide="map-pin" class="text-evac"></i>
+                  <i data-lucide="map-pin" class="text-white/85"></i>
                 </div>
                 <div>
-                  <div class="font-display font-extrabold text-white">Алматы</div>
-                  <div class="text-xs text-muted">По городу и области</div>
+                  <div class="font-display font-extrabold text-white">Караганда</div>
+                  <div class="text-xs text-muted">Город и область</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- subtle divider -->
         <div class="mt-14 h-px w-full bg-gradient-to-r from-transparent via-white/12 to-transparent"></div>
-      </div>
-    </section>
-
-    <!-- Манипуляторы -->
-    <section id="manip-section" class="relative py-16 md:py-20">
-      <div class="absolute inset-0 pointer-events-none">
-        <div class="mx-auto max-w-6xl px-4">
-          <div class="h-px w-full bg-gradient-to-r from-transparent via-manip/25 to-transparent"></div>
-        </div>
-      </div>
-
-      <div class="mx-auto max-w-6xl px-4">
-        <div class="reveal flex items-end justify-between gap-6">
-          <div>
-            <div class="inline-flex items-center gap-2 rounded-full border border-stroke bg-white/5 px-4 py-2 text-xs font-semibold text-white/80">
-              <span class="h-2 w-2 rounded-full bg-manip"></span> Техника для перевозки и монтажа
-            </div>
-            <h2 class="mt-4 font-display text-3xl md:text-4xl font-extrabold text-white">
-              Наши <span class="grad-manip">манипуляторы</span>
-            </h2>
-            <p class="mt-3 text-muted max-w-2xl">
-              Выбирай подходящую грузоподъёмность: от компактных задач до тяжёлых и негабаритных перевозок.
-            </p>
-          </div>
-
-          <a href="https://wa.me/77474640078"
-             onclick="return gtag_report_conversion(this.href);"
-             class="hidden md:inline-flex btn items-center gap-2 rounded-xl2 px-5 py-3 font-display font-extrabold
-                    border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
-            <i data-lucide="calculator" class="text-manip"></i>
-            Рассчитать стоимость
-          </a>
-        </div>
-
-        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          <!-- Card 1 -->
-          <article class="card reveal glass rounded-xl2 overflow-hidden shadow-soft">
-            <button class="w-full text-left" type="button" data-lightbox="images/manip-1.jpg">
-              <div class="relative h-56 overflow-hidden">
-                <img src="images/manip-1.jpg" alt="Манипулятор 3 тонны" class="img-zoom h-full w-full object-cover" loading="lazy">
-                <div class="absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-extrabold text-white
-                            bg-manip/25 border border-manip/40 backdrop-blur">
-                  Компактный
-                </div>
-              </div>
-            </button>
-
-            <div class="p-5">
-              <h3 class="font-display font-extrabold text-lg text-white">Манипулятор 3 тонны</h3>
-
-              <div class="mt-4 space-y-2 text-sm">
-                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="truck" class="h-4 w-4 text-manip"></i> Борт</span>
-                  <span class="font-bold text-white">5 тонн</span>
-                </div>
-                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="ruler" class="h-4 w-4 text-manip"></i> Длина</span>
-                  <span class="font-bold text-white">5.5 м</span>
-                </div>
-                <div class="flex items-center justify-between gap-3">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="arrow-up-right" class="h-4 w-4 text-manip"></i> Стрела</span>
-                  <span class="font-bold text-manip">3 тонны</span>
-                </div>
-              </div>
-
-              <a href="https://wa.me/77474640078"
-                 onclick="return gtag_report_conversion(this.href);"
-                 class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
-                        bg-gradient-to-r from-manip/90 to-manip2/90 hover:brightness-110 transition border border-stroke text-white">
-                <i data-lucide="message-circle" class="h-5 w-5"></i> Заказать
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 2 -->
-          <article class="card reveal glass rounded-xl2 overflow-hidden shadow-soft" style="transition-delay:.05s">
-            <button class="w-full text-left" type="button" data-lightbox="images/manip-2.jpg">
-              <div class="relative h-56 overflow-hidden">
-                <img src="images/manip-2.jpg" alt="Манипулятор 8 тонн" class="img-zoom h-full w-full object-cover" loading="lazy">
-                <div class="absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-extrabold text-white
-                            bg-manip/25 border border-manip/40 backdrop-blur">
-                  Популярный
-                </div>
-              </div>
-            </button>
-
-            <div class="p-5">
-              <h3 class="font-display font-extrabold text-lg text-white">Манипулятор 8 тонн</h3>
-
-              <div class="mt-4 space-y-2 text-sm">
-                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="truck" class="h-4 w-4 text-manip"></i> Борт</span>
-                  <span class="font-bold text-white">12 тонн</span>
-                </div>
-                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="ruler" class="h-4 w-4 text-manip"></i> Длина</span>
-                  <span class="font-bold text-white">7 м</span>
-                </div>
-                <div class="flex items-center justify-between gap-3">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="arrow-up-right" class="h-4 w-4 text-manip"></i> Стрела</span>
-                  <span class="font-bold text-manip">8 тонн</span>
-                </div>
-              </div>
-
-              <a href="https://wa.me/77474640078"
-                 onclick="return gtag_report_conversion(this.href);"
-                 class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
-                        bg-gradient-to-r from-manip/90 to-manip2/90 hover:brightness-110 transition border border-stroke text-white">
-                <i data-lucide="message-circle" class="h-5 w-5"></i> Заказать
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 3 -->
-          <article class="card reveal glass rounded-xl2 overflow-hidden shadow-soft" style="transition-delay:.1s">
-            <button class="w-full text-left" type="button" data-lightbox="images/manip-3.jpg">
-              <div class="relative h-56 overflow-hidden">
-                <img src="images/manip-3.jpg" alt="Манипулятор 10 тонн" class="img-zoom h-full w-full object-cover" loading="lazy">
-                <div class="absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-extrabold text-white
-                            bg-white/10 border border-white/20 backdrop-blur">
-                  Тяжеловес
-                </div>
-              </div>
-            </button>
-
-            <div class="p-5">
-              <h3 class="font-display font-extrabold text-lg text-white">Манипулятор 10 тонн</h3>
-
-              <div class="mt-4 space-y-2 text-sm">
-                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="truck" class="h-4 w-4 text-manip"></i> Борт</span>
-                  <span class="font-bold text-white">12 тонн</span>
-                </div>
-                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="ruler" class="h-4 w-4 text-manip"></i> Длина</span>
-                  <span class="font-bold text-white">9 м</span>
-                </div>
-                <div class="flex items-center justify-between gap-3">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="arrow-up-right" class="h-4 w-4 text-manip"></i> Стрела</span>
-                  <span class="font-bold text-manip">12 тонн</span>
-                </div>
-              </div>
-
-              <a href="https://wa.me/77474640078"
-                 onclick="return gtag_report_conversion(this.href);"
-                 class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
-                        bg-gradient-to-r from-manip/90 to-manip2/90 hover:brightness-110 transition border border-stroke text-white">
-                <i data-lucide="message-circle" class="h-5 w-5"></i> Заказать
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 4 -->
-          <article class="card reveal glass rounded-xl2 overflow-hidden shadow-soft" style="transition-delay:.15s">
-            <button class="w-full text-left" type="button" data-lightbox="images/manip-4.jpg">
-              <div class="relative h-56 overflow-hidden">
-                <img src="images/manip-4.jpg" alt="Манипулятор 12 тонн" class="img-zoom h-full w-full object-cover" loading="lazy">
-                <div class="absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-extrabold text-white
-                            bg-evac/20 border border-evac/35 backdrop-blur">
-                  Негабарит
-                </div>
-              </div>
-            </button>
-
-            <div class="p-5">
-              <h3 class="font-display font-extrabold text-lg text-white">Манипулятор 12 тонн</h3>
-
-              <div class="mt-4 space-y-2 text-sm">
-                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="truck" class="h-4 w-4 text-manip"></i> Борт</span>
-                  <span class="font-bold text-white">15 тонн</span>
-                </div>
-                <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="ruler" class="h-4 w-4 text-manip"></i> Длина</span>
-                  <span class="font-bold text-white">до 12 м</span>
-                </div>
-                <div class="flex items-center justify-between gap-3">
-                  <span class="text-muted flex items-center gap-2"><i data-lucide="arrow-up-right" class="h-4 w-4 text-manip"></i> Стрела</span>
-                  <span class="font-bold text-manip">20 тонн</span>
-                </div>
-              </div>
-
-              <a href="https://wa.me/77474640078"
-                 onclick="return gtag_report_conversion(this.href);"
-                 class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
-                        bg-gradient-to-r from-manip/90 to-manip2/90 hover:brightness-110 transition border border-stroke text-white">
-                <i data-lucide="message-circle" class="h-5 w-5"></i> Заказать
-              </a>
-            </div>
-          </article>
-        </div>
-
-        <!-- mobile calc button -->
-        <div class="reveal mt-8 md:hidden">
-          <a href="https://wa.me/77474640078"
-             onclick="return gtag_report_conversion(this.href);"
-             class="btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-6 py-4 font-display font-extrabold
-                    border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
-            <i data-lucide="calculator" class="text-manip"></i>
-            Рассчитать стоимость аренды
-          </a>
-        </div>
       </div>
     </section>
 
@@ -593,7 +375,7 @@
             Наши <span class="grad-evac">эвакуаторы</span>
           </h2>
           <p class="mt-3 text-muted max-w-2xl">
-            Подача ближайшей машины, безопасная погрузка и аккуратная перевозка.
+            Подача ближайшей машины по Караганде и области, безопасная погрузка и аккуратная перевозка.
           </p>
         </div>
 
@@ -628,7 +410,7 @@
                 </div>
               </div>
 
-              <a href="tel:+77474640078"
+              <a href="tel:+77780992900"
                  onclick="return gtag_report_conversion(this.href);"
                  class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
                         bg-gradient-to-r from-evac/95 to-evac2/95 hover:brightness-110 transition border border-stroke text-white">
@@ -663,7 +445,7 @@
                 </div>
               </div>
 
-              <a href="tel:+77474640078"
+              <a href="tel:+77780992900"
                  onclick="return gtag_report_conversion(this.href);"
                  class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
                         bg-gradient-to-r from-evac/95 to-evac2/95 hover:brightness-110 transition border border-stroke text-white">
@@ -702,7 +484,7 @@
                 </div>
               </div>
 
-              <a href="tel:+77474640078"
+              <a href="tel:+77780992900"
                  onclick="return gtag_report_conversion(this.href);"
                  class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
                         bg-gradient-to-r from-evac/95 to-evac2/95 hover:brightness-110 transition border border-stroke text-white">
@@ -715,12 +497,12 @@
           <article class="card reveal glass rounded-xl2 overflow-hidden shadow-soft" style="transition-delay:.15s">
             <button class="w-full text-left" type="button" data-lightbox="images/evac-4.jpg">
               <div class="relative h-56 overflow-hidden">
-                <img src="images/evac-4.jpg" alt="Кран-манипулятор" class="img-zoom h-full w-full object-cover" loading="lazy">
+                <img src="images/evac-4.jpg" alt="Кран-манипулятор для авто" class="img-zoom h-full w-full object-cover" loading="lazy">
               </div>
             </button>
 
             <div class="p-5">
-              <h3 class="font-display font-extrabold text-lg text-white">Кран-манипулятор</h3>
+              <h3 class="font-display font-extrabold text-lg text-white">Погрузка сверху</h3>
 
               <div class="mt-4 space-y-2 text-sm">
                 <div class="flex items-center justify-between gap-3 border-b border-white/10 pb-2">
@@ -733,11 +515,11 @@
                 </div>
                 <div class="flex items-center justify-between gap-3">
                   <span class="text-muted flex items-center gap-2"><i data-lucide="move-up-right" class="h-4 w-4 text-evac"></i> Особ.</span>
-                  <span class="font-bold text-white">Погрузка сверху</span>
+                  <span class="font-bold text-white">Аккуратно</span>
                 </div>
               </div>
 
-              <a href="tel:+77474640078"
+              <a href="tel:+77780992900"
                  onclick="return gtag_report_conversion(this.href);"
                  class="mt-5 btn inline-flex w-full items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
                         bg-gradient-to-r from-evac/95 to-evac2/95 hover:brightness-110 transition border border-stroke text-white">
@@ -748,7 +530,7 @@
         </div>
 
         <div class="reveal mt-8">
-          <a href="tel:+77474640078"
+          <a href="tel:+77780992900"
              onclick="return gtag_report_conversion(this.href);"
              class="btn inline-flex w-full md:w-auto items-center justify-center gap-2 rounded-xl2 px-7 py-4 font-display font-extrabold
                     border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
@@ -769,24 +551,24 @@
                 KAZ<span class="text-white/70">SPEC</span>
               </div>
               <div class="mt-1 text-sm text-muted">
-                Единая служба спецтехники Алматы. 2025.
+                Эвакуатор 24/7 • Караганда и область. 2025.
               </div>
             </div>
 
             <div class="flex flex-wrap items-center gap-3">
-              <a href="https://wa.me/77474640078"
+              <a href="https://wa.me/77780992900"
                  onclick="return gtag_report_conversion(this.href);"
                  class="btn inline-flex items-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
                         border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
-                <i data-lucide="message-circle" class="text-manip"></i>
+                <i data-lucide="message-circle" class="text-white/85"></i>
                 WhatsApp
               </a>
 
-              <a href="tel:+77474640078"
+              <a href="tel:+77780992900"
                  onclick="return gtag_report_conversion(this.href);"
                  class="btn inline-flex items-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
                         border border-stroke bg-white/5 hover:bg-white/10 text-white transition">
-                <i data-lucide="phone-call" class="text-evac"></i>
+                <i data-lucide="phone-call" class="text-white/85"></i>
                 Позвонить
               </a>
 
@@ -813,19 +595,19 @@
     <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
       <div class="glass border-t border-stroke px-3 py-3">
         <div class="flex gap-2">
-          <a href="https://wa.me/77474640078"
-             onclick="return gtag_report_conversion(this.href);"
-             class="btn flex-1 inline-flex items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
-                    bg-gradient-to-r from-manip/90 to-manip2/90 border border-stroke text-white active:scale-[.98] transition">
-            <i data-lucide="message-circle" class="h-5 w-5"></i>
-            МАНИПУЛЯТОР
-          </a>
-          <a href="tel:+77474640078"
+          <a href="tel:+77780992900"
              onclick="return gtag_report_conversion(this.href);"
              class="btn flex-1 inline-flex items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
                     bg-gradient-to-r from-evac/95 to-evac2/95 border border-stroke text-white active:scale-[.98] transition">
             <i data-lucide="phone-call" class="h-5 w-5"></i>
-            ЭВАКУАТОР
+            ВЫЗВАТЬ
+          </a>
+          <a href="https://wa.me/77780992900"
+             onclick="return gtag_report_conversion(this.href);"
+             class="btn flex-1 inline-flex items-center justify-center gap-2 rounded-xl2 px-4 py-3 font-display font-extrabold
+                    border border-stroke bg-white/5 hover:bg-white/10 text-white active:scale-[.98] transition">
+            <i data-lucide="message-circle" class="h-5 w-5"></i>
+            WHATSAPP
           </a>
         </div>
       </div>
@@ -847,11 +629,10 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    // Header shrink + stronger blur on scroll
+    // Header blur on scroll
     const header = document.getElementById('siteHeader');
     const setHeader = () => {
       const y = window.scrollY || 0;
-      header.style.transform = y > 12 ? 'translateY(0)' : 'translateY(0)';
       header.style.backdropFilter = y > 12 ? 'blur(18px)' : 'blur(14px)';
     };
     window.addEventListener('scroll', setHeader, { passive: true });
@@ -891,7 +672,7 @@
     lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-    // Smooth scroll for in-page anchors (slightly nicer than default)
+    // Smooth scroll for in-page anchors
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
         const id = a.getAttribute('href');
